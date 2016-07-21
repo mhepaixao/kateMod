@@ -1,0 +1,21 @@
+//in case of omnipresent modules, there are the first ones to be declared
+OMNIPRESENT_MODULE <name of the module>
+//then, the original clusters are declared
+CLUSTER <name of the cluster>
+//all modules declared next belong to this cluster
+NODE <name of the module>
+NODE <name of the module>
+NODE <name of the module>
+NODE <name of the module>
+//next are declared the function calls and inheritance edges of the modules in this cluster
+//in case of weighted data, the weight will be declared after the modules names
+CALL_EDGE <name of the dependant> <name of the dependency module> <weight>
+CALL_EDGE <name of the dependant> <name of the dependency module> <weight>
+CALL_EDGE <name of the dependant> <name of the dependency module> <weight>
+CALL_EDGE <name of the dependant> <name of the dependency module> <weight>
+INHERITANCE_EDGE <name of the module that inherits> <name of the module inherited>
+CLUSTER <name other cluster>
+NODE <name of other module>
+NODE <name of other module>
+CALL_EDGE <name of the dependant> <name of the dependency module> <weight>
+CALL_EDGE <name of the dependant> <name of the dependency module> <weight>

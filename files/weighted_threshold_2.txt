@@ -1,0 +1,60 @@
+OMNIPRESENT_MODULE KateApp
+OMNIPRESENT_MODULE KateMainWindow
+OMNIPRESENT_MODULE KateSessionManager
+CLUSTER src
+NODE GUIClient
+NODE MainWindow
+NODE SideBar
+NODE TmpToolViewSorter
+NODE ToggleToolViewAction
+NODE ToolView
+NODE AbstractKateSaveModifiedDialogCheckListItem
+NODE KateConfigDialog
+NODE KateDocManager
+NODE KateMwModOnHdDialog
+NODE KatePluginInfo
+NODE KatePluginManager
+NODE KateQuickOpen
+NODE KateRunningInstanceInfo
+NODE KateSaveModifiedDialog
+NODE KateSaveModifiedDocumentCheckListItem
+NODE KateTabBar
+NODE KateTabButton
+NODE KateViewManager
+NODE KateViewSpace
+NODE Main
+CALL_EDGE GUIClient MainWindow 2
+CALL_EDGE MainWindow SideBar 12
+CALL_EDGE MainWindow GUIClient 4
+CALL_EDGE MainWindow ToolView 7
+CALL_EDGE SideBar ToolView 5
+CALL_EDGE SideBar MainWindow 1
+CALL_EDGE ToggleToolViewAction ToolView 3
+CALL_EDGE ToggleToolViewAction MainWindow 2
+CALL_EDGE ToolView MainWindow 1
+CALL_EDGE KateConfigDialog KateDocManager 3
+CALL_EDGE KateConfigDialog KatePluginManager 1
+CALL_EDGE KateDocManager KateSaveModifiedDialog 1
+CALL_EDGE KateMwModOnHdDialog KateDocManager 1
+CALL_EDGE KatePluginManager KatePluginInfo 5
+CALL_EDGE KateQuickOpen KateViewManager 1
+CALL_EDGE KateQuickOpen KateDocManager 1
+CALL_EDGE KateSaveModifiedDialog AbstractKateSaveModifiedDialogCheckListItem 3
+CALL_EDGE KateSaveModifiedDocumentCheckListItem AbstractKateSaveModifiedDialogCheckListItem 1
+CALL_EDGE KateTabBar KateTabButton 1
+CALL_EDGE KateViewManager KateViewSpace 6
+CALL_EDGE KateViewManager KateDocManager 6
+CALL_EDGE KateViewSpace KateViewManager 6
+CALL_EDGE KateViewSpace KateTabBar 13
+CALL_EDGE KateViewSpace KateDocManager 1
+CALL_EDGE Main KateRunningInstanceInfo 2
+CALL_EDGE TmpToolViewSorter ToolView
+INHERITANCE_EDGE KateSaveModifiedDocumentCheckListItem AbstractKateSaveModifiedDialogCheckListItem
+CLUSTER session
+NODE KateSession
+NODE KateSessionChooser
+NODE KateSessionOpenDialog
+NODE KateSessionsAction
+CALL_EDGE KateSessionChooser KateSession 1
+CALL_EDGE KateSessionOpenDialog KateSession 1
+CALL_EDGE KateSessionsAction KateSession 1

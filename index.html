@@ -1,0 +1,130 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"> 
+<html> 
+
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+
+<meta http-equiv="Content-Language" content="en"> 
+<meta name="description" content="Supporting material for the paper: Improving the Module Clustering of a C/C++ Editor using a Multi-objective 
+                                  Genetic Algorithm"> 
+<meta name="keywords" content="crest,ucl,software module clustering,multi-objective optimization" > 
+<meta name="robots" content="index,follow" > 
+<meta name="author" content="Matheus Paixao" > 
+<title>
+Multi-objective Module Clustering for Kate
+</title> 
+<link rel="stylesheet" type="text/css" media="all" href="style/style.css"> 
+</head> 
+
+<body> 
+<h2 class="unnumbered">Supporting material for the paper</h2> 
+
+<h1 class="title">        
+Multi-objective Module Clustering for Kate
+</h1> 
+
+<p>By <a href="http://www0.cs.ucl.ac.uk/staff/m.paixao/" target='_blank'>Matheus Paixao</a>, 
+      <a href="http://www0.cs.ucl.ac.uk/staff/M.Harman/" target='_blank'>Mark Harman</a> and 
+      <a href="http://www0.cs.ucl.ac.uk/staff/Yuanyuan.Zhang/" target='_blank'>Yuanyuan Zhang</a>
+<br>
+<a href="http://crest.cs.ucl.ac.uk/" target='_blank'>Centre for Research on Evolution, Search and Testing (CREST UCL)</a>
+<br>
+<a href="http://www.ucl.ac.uk/" target='_blank'>University College London</a>
+
+<br><br>
+A complementary technical report about this paper is available <a href="http://www.cs.ucl.ac.uk/research/research_notes/" target='_blank'>here</a>
+<p style="color: #376191;">May 2015 (last update: May 2015)
+
+<table id="tableOfContents" cellpadding="10"> 
+   <tbody> 
+      <tr>
+         <td align="left"> 
+            <b>Table of Contents</b> 
+            <ol> 
+               <li><a href="#abstractField">Abstract</a></li>
+               <li><a href="#datasets">Kate Modularization Datasets</a></li>  
+            </ol>
+         </td>
+   </tbody> 
+</table>
+
+<h2 id="abstractField">Abstract</h2> 
+<p id="abstract">
+
+The paper applies multi-objective search based software remodularization to the program Kate, showing how this can improve cohesion and 
+coupling, and investigating differences between weighted and unweighted approaches and between equal-size and maximising clusters 
+approaches. It is also investigated the effects of considering omnipresent modules. Overall, it is provided evidence that search based modularization 
+can benefit Kate developers. 
+
+<br><br> 
+
+<label id="keywords"> Keywords: </label> 
+<!--Next Release Problem, -->
+<!--Robust Optimization, -->
+<!--Search Based Software Engineering.-->
+</p> 
+
+<h2 id="datasets">Kate Modularization Datasets</h2>
+<p id="instancesDefinition">
+
+<h3>Data Extraction</h3>
+
+Kate’s source code is organized in only two folders, src and session, where each folder accommodate some classes. First, the call graph of 
+each function of Kate was directly extracted from the source code using Doxygen. Then, Doxygen was also used to extract the inheritance graph
+between classes. Finally, Kate’s unweighted and weighted MDGs were created from the call and inheritance graphs, where each class is considered 
+a module, and a function call or inheritance from one class to another represents a dependency between the respective modules. The weight of 
+an edge in the weighted MDG is considered to be the number of functions calls from one class to another. The clusters are considered to be the 
+folders the classes are in.
+
+<br><br>
+
+There are usually some modules that have more dependencies than the average. Such modules are called omnipresent because they do not seem to 
+belong to any particular cluster, but to the system as whole. The omnipresent modules were identified using thresholds. By choosing an 
+omnipresent threshold o_t = 3 , for example, all modules that have 3 times more dependencies than the average is considered to be omnipresent. 
+As smaller the threshold, more modules will be identified as omnipresent. Two different thresholds were used in this work, o_t = 3 and 
+o_t = 2 . A threshold o t = 4 did not identified any omnipresent module.
+
+</p>
+
+<table>
+   <tr>
+      <td class="instanceColumn">Datasets</td>
+      <td class="filesColumn">Download</td>
+   </tr>
+   <tr>
+      <td class='instancesValuesImpar'>Dataset Example</td>
+      <td class='filesValuesImpar'><a href='files/dataset_example.txt' target='_blank'>Dataset Example</a></td>
+   </tr>
+   <tr>
+      <td class='instancesValuesPar'>All Datasets</td>
+      <td class='filesValuesPar'><a href='files/datasets.rar'>All datasets</a></td>
+   </tr>
+   <!--Instances with 50 requirements-->
+   <tr>
+      <td class='instancesValuesPar'>Unweighted</td>
+      <td class='filesValuesPar'><a href='files/unweighted.txt' target='_blank'>Unweighted</a></td>
+   </tr>
+   <tr>
+      <td class='instancesValuesPar'>Unweighted Threshold 3</td>
+      <td class='filesValuesPar'><a href='files/unweighted_threshold_3.txt' target='_blank'>Unweighted Threshold 3</a></td>
+   </tr>
+   <tr>
+      <td class='instancesValuesPar'>Unweighted Threshold 2</td>
+      <td class='filesValuesPar'><a href='files/unweighted_threshold_2.txt' target='_blank'>Unweighted Threshold 2</a></td>
+   </tr>
+   <tr>
+      <td class='instancesValuesPar'>Weighted</td>
+      <td class='filesValuesPar'><a href='files/weighted.txt' target='_blank'>Weighted</a></td>
+   </tr>
+   <tr>
+      <td class='instancesValuesPar'>Weighted Threshold 3</td>
+      <td class='filesValuesPar'><a href='files/weighted_threshold_3.txt' target='_blank'>Weighted Threshold 3</a></td>
+   </tr>
+   <tr>
+      <td class='instancesValuesPar'>Weighted Threshold 2</td>
+      <td class='filesValuesPar'><a href='files/weighted_threshold_2.txt' target='_blank'>Weighted Threshold 2</a></td>
+   </tr>
+</table>
+
+</body>
+</html>

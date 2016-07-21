@@ -1,0 +1,111 @@
+CLUSTER src
+NODE GUIClient
+NODE MainWindow
+NODE SideBar
+NODE TmpToolViewSorter
+NODE ToggleToolViewAction
+NODE ToolView
+NODE AbstractKateSaveModifiedDialogCheckListItem
+NODE KateApp
+NODE KateAppAdaptor
+NODE KateConfigDialog
+NODE KateConfigPluginPage
+NODE KateDocManager
+NODE KateMainWindow
+NODE KateMwModOnHdDialog
+NODE KatePluginInfo
+NODE KatePluginManager
+NODE KateQuickOpen
+NODE KateRunningInstanceInfo
+NODE KateSaveModifiedDialog
+NODE KateSaveModifiedDocumentCheckListItem
+NODE KateTabBar
+NODE KateTabButton
+NODE KateViewManager
+NODE KateViewSpace
+NODE Main
+CALL_EDGE GUIClient MainWindow
+CALL_EDGE MainWindow SideBar
+CALL_EDGE MainWindow GUIClient
+CALL_EDGE MainWindow ToolView
+CALL_EDGE SideBar ToolView
+CALL_EDGE SideBar MainWindow
+CALL_EDGE ToggleToolViewAction ToolView
+CALL_EDGE ToggleToolViewAction MainWindow
+CALL_EDGE ToolView MainWindow
+CALL_EDGE KateApp KateAppAdaptor
+CALL_EDGE KateApp KateMainWindow
+CALL_EDGE KateApp KateViewManager
+CALL_EDGE KateApp KatePluginManager
+CALL_EDGE KateApp KateSessionManager
+CALL_EDGE KateAppAdaptor KateApp
+CALL_EDGE KateAppAdaptor KateSessionManager
+CALL_EDGE KateConfigDialog KateMainWindow
+CALL_EDGE KateConfigDialog KateApp
+CALL_EDGE KateConfigDialog KateDocManager
+CALL_EDGE KateConfigDialog KateSessionManager
+CALL_EDGE KateConfigDialog KatePluginManager
+CALL_EDGE KateConfigPluginPage KateApp
+CALL_EDGE KateDocManager KateApp
+CALL_EDGE KateDocManager KateSaveModifiedDialog
+CALL_EDGE KateDocManager KateMainWindow
+CALL_EDGE KateMainWindow MainWindow
+CALL_EDGE KateMainWindow KateApp
+CALL_EDGE KateMainWindow KatePluginManager
+CALL_EDGE KateMainWindow KateViewManager
+CALL_EDGE KateMainWindow KateDocManager
+CALL_EDGE KateMainWindow KateSaveModifiedDialog
+CALL_EDGE KateMainWindow KateMwModOnHdDialog
+CALL_EDGE KateMainWindow KatePluginInfo
+CALL_EDGE KateMainWindow KateConfigDialog
+CALL_EDGE KateMainWindow KateViewSpace
+CALL_EDGE KateMainWindow KateQuickOpen
+CALL_EDGE KateMwModOnHdDialog KateApp
+CALL_EDGE KateMwModOnHdDialog KateMainWindow
+CALL_EDGE KateMwModOnHdDialog KateDocManager
+CALL_EDGE KatePluginManager KateMainWindow
+CALL_EDGE KatePluginManager KateApp
+CALL_EDGE KatePluginManager KatePluginInfo
+CALL_EDGE KateQuickOpen KateMainWindow
+CALL_EDGE KateQuickOpen KateViewManager
+CALL_EDGE KateQuickOpen KateApp
+CALL_EDGE KateQuickOpen KateDocManager
+CALL_EDGE KateSaveModifiedDialog AbstractKateSaveModifiedDialogCheckListItem
+CALL_EDGE KateSaveModifiedDocumentCheckListItem AbstractKateSaveModifiedDialogCheckListItem
+CALL_EDGE KateTabBar KateTabButton
+CALL_EDGE KateViewManager KateViewSpace
+CALL_EDGE KateViewManager KateApp
+CALL_EDGE KateViewManager KateDocManager
+CALL_EDGE KateViewManager KateMainWindow
+CALL_EDGE KateViewSpace KateViewManager
+CALL_EDGE KateViewSpace KateApp
+CALL_EDGE KateViewSpace KateMainWindow
+CALL_EDGE KateViewSpace KateSessionManager
+CALL_EDGE KateViewSpace KateTabBar
+CALL_EDGE KateViewSpace KateDocManager
+CALL_EDGE Main KateRunningInstanceInfo
+CALL_EDGE Main KateApp
+CALL_EDGE TmpToolViewSorter ToolView
+INHERITANCE_EDGE KateMainWindow MainWindow
+INHERITANCE_EDGE KateSaveModifiedDocumentCheckListItem AbstractKateSaveModifiedDialogCheckListItem
+CLUSTER session
+NODE KateSession
+NODE KateSessionChooser
+NODE KateSessionManageDialog
+NODE KateSessionManager
+NODE KateSessionOpenDialog
+NODE KateSessionsAction
+CALL_EDGE KateSessionChooser KateApp
+CALL_EDGE KateSessionChooser KateSessionManager
+CALL_EDGE KateSessionChooser KateSession
+CALL_EDGE KateSessionManageDialog KateApp
+CALL_EDGE KateSessionManageDialog KateSessionManager
+CALL_EDGE KateSessionManager KateSession
+CALL_EDGE KateSessionManager KateRunningInstanceInfo
+CALL_EDGE KateSessionManager KateDocManager
+CALL_EDGE KateSessionOpenDialog KateApp
+CALL_EDGE KateSessionOpenDialog KateSessionManager
+CALL_EDGE KateSessionOpenDialog KateSession
+CALL_EDGE KateSessionsAction KateApp
+CALL_EDGE KateSessionsAction KateSessionManager
+CALL_EDGE KateSessionsAction KateSession
